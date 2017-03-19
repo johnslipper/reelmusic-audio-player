@@ -1,0 +1,595 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*----
+RESETS
+----*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, p, blockquote, table, th, td, embed, object {
+padding: 0;
+margin: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+fieldset, img, abbr {
+border: 0;
+}
+address, caption, cite, code, em,
+h1, h2, h3, h4, h5, h6, strong, th {
+font-weight: normal;
+font-style: normal;
+}
+ul {
+list-style: none;
+}
+caption, th {
+text-align: left;
+}
+a {
+text-decoration: none;
+}
+
+/*----
+LAYOUT
+----*/
+html, body {
+	width:100%;
+	height:100%;
+	font-family:helvetica, arial;
+}
+
+body {
+	background-image:-webkit-radial-gradient(rgba(127, 127, 127, 0), rgba(127, 127, 127, 0.1) 35%, rgba(0, 0, 0, 0.65));
+	background-image:-moz-radial-gradient(rgba(127, 127, 127, 0), rgba(127, 127, 127, 0.1) 35%, rgba(0, 0, 0, 0.65));
+	background: #333;
+	
+}
+.wrapper-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image:url(../images/cloth.jpg);
+	overflow:hidden;
+}
+.wrapper {
+	width:960px;
+	height:100%;
+	margin:0 auto;
+	position:relative;
+}
+#loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index:10;
+	background-color: #333;
+	background-image: url(../images/ajax-loader.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+h1#title {
+	position:absolute;
+	bottom: 290px;
+	left: 300px;
+	color: #f7f1d3;
+	font-weight: bold;
+	font-size: 60px;
+	letter-spacing:-2px;
+	-moz-transform:rotate(2deg);
+	-ms-transform:rotate(2deg);
+	-o-transform:rotate(2deg);
+	-webkit-transform:rotate(2deg);
+	transform:rotate(2deg);
+	text-shadow: 1px 1px 3px rgba(66, 64, 64, 1);
+}
+h1#title span {
+	position: absolute;
+}
+h1#title span.bottom {
+	top: 0;
+	left:102px;
+	color: #FFF;
+	padding-right: 8px;
+	border-top: 3px dotted #FFF;
+	border-bottom: 3px dotted #FFF;
+	background-color: rgba(255, 255, 255, 0.25);
+	z-index:0;
+}
+h1#title span.top {
+	top: 3px;
+	z-index:1;
+}
+
+/*-------------
+BROWSER MESSAGE
+-------------*/
+#message {
+	opacity:0;
+	position: absolute;
+	left: -9999px;
+	top: 50%;
+	width: 415px;
+	height: 260px;
+	margin: -130px 0 0 -208px;
+	padding: 20px;
+	z-index: 11;
+	background: #FFF;
+	border: 3px solid #CCC;
+}
+#message p {margin: 1em 0;}
+#message ul li {display: inline;}
+#message ul li a {
+	display: inline-block;
+	width: 125px;
+	height: 127px;
+	background: url(../images/browsers.jpg) no-repeat top left;
+	overflow:hidden;
+	text-indent: -9999em;
+}
+#message a.firefox {background-position-x: -125px;}
+#message a.safari {background-position-x: -250px;}
+#message a.opera {background-position-x: -375px;}
+
+/*---
+TAPES
+---*/
+#tapes {
+	position:absolute;
+	top:75px;
+	left:20px;
+	text-align:center;
+	z-index:3;
+}
+.tape-box {}
+.tape-box a {
+	display:inline-block;
+	position: relative;
+	width:229px;
+	height:231px;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -912px -49px;
+	margin-bottom:-100px;
+	-moz-transform:rotate(1.5deg);
+	-ms-transform:rotate(1.5deg);
+	-o-transform:rotate(1.5deg);
+	-webkit-transform:rotate(1.5deg);
+	transform:rotate(1.5deg);
+	-moz-transition: -moz-transform .25s ease-in-out;
+	-ms-transition: -ms-transform .25s ease-in-out;
+	-o-transition: -o-transform .25s ease-in-out;
+	-webkit-transition: -webkit-transform .25s ease-in-out;
+	transition: transform .25s ease-in-out;
+	text-align:center;
+	box-shadow:6px 6px 3px rgba(0,0,0,0.65);
+}
+.tape-box a:hover {
+	-moz-transform:translate(0,-10px);
+	-ms-transform:translate(0,-10px);
+	-o-transform:translate(0,-10px);
+	-webkit-transform:translate(0,-10px);
+	transform:translate(0,-10px);
+	box-shadow:10px 10px 10px rgba(0,0,0,0.5);
+}
+.tape-box a span {
+	position:absolute;
+	top: 60px;
+	left: 30px;
+	padding:2px 5px;
+	color:#333;
+	font-family: 'Just Me Again Down Here', cursive;
+	font-size: 1.3em;
+	background:url(../images/label-strip.png) no-repeat;
+	cursor:pointer;
+}
+
+/*----------
+REEL TO REEL
+----------*/
+#reel-body {
+	position:relative;
+	top:60px;
+	left:280px;
+	width:500px;
+	height:395px;
+	z-index:2;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -2px -2px;
+}
+.reel {
+	position:absolute;
+	width:232px;
+	height:232px;
+	-moz-border-radius:116px;
+	-ms-border-radius:116px;
+	-o-border-radius:116px;
+	-webkit-border-radius:116px;
+	border-radius:116px;
+	box-shadow:5px 5px 6px rgba(0,0,0,0.5);
+	opacity:0;
+	z-index:3;
+}
+#leftReelOuter {
+	top:65px;
+	left:292px;
+}
+#rightReelOuter {
+	top:65px;
+	right:196px;
+}
+#leftReel, #rightReel {
+	position:absolute;
+	top:0;
+	left:0;
+	width:234px;
+	height:234px;
+	-moz-border-radius:117px;
+	-ms-border-radius:117px;
+	-o-border-radius:117px;
+	-webkit-border-radius:117px;
+	border-radius:117px;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -1428px -2px;
+}
+.runner {
+	position:absolute;
+	width:70px;
+	height:70px;
+	z-index:4;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -1664px -227px;
+}
+#leftRunner {
+	top:147px;
+	left:376px;
+}
+#rightRunner {
+	top:147px;
+	right:274px;
+}
+.tape {
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:#797176;
+	background-image:url(../images/tape.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow:3px 3px 3px rgba(0,0,0,0.5);
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius: 50%;
+}
+#leftTape {
+	width:210px;
+	height:210px;
+	margin-top:12px;
+	margin-left:12px;
+}
+#rightTape {
+	width:10px;
+	height:10px;
+	margin-top:112px;
+	margin-left:112px;
+}
+.shadow {
+	width:100%;
+	height:100%;
+	-moz-border-radius:116px;
+	-ms-border-radius:116px;
+	-o-border-radius:116px;
+	-webkit-border-radius:116px;
+	border-radius:116px;
+	box-shadow:inset 15px 15px 10px rgba(0,0,0,0.7), inset -15px -15px 10px rgba(0,0,0,0.7);
+	background-color:rgba(0,0,0,0.2);
+}
+.tape-strip {
+	position:absolute;
+	width:3px;
+	height:0;
+	top:179px;
+	z-index:2;
+	background:url(../images/tape-strip.png) repeat-x top;
+}
+#leftTapeStrip {
+	left:447px;
+	-moz-transform: rotate(-66deg);
+	-ms-transform: rotate(-66deg);
+	-o-transform: rotate(-66deg);
+	-webkit-transform: rotate(-66deg);
+	transform: rotate(-66deg);
+}
+#rightTapeStrip {
+	right:356px;
+	-moz-transform: rotate(31deg);
+	-ms-transform: rotate(31deg);
+	-o-transform: rotate(31deg);
+	-webkit-transform: rotate(31deg);
+	transform: rotate(31deg);
+}
+
+/*------
+CONTROLS
+------*/
+#info {
+	position:absolute;
+	width:150px;
+	top:280px;
+	left:170px;
+}
+.strip {
+	width:152px;
+	height: 18px;
+	overflow: hidden;
+	padding:2px 0;
+	margin:1px 0;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -912px -2px;
+}
+.strip label {
+	display:inline-block;
+	vertical-align:middle;
+	width:35px;
+	margin-left:2px;
+	font-size:0.6em;
+}
+.strip span {
+	display:inline-block;
+	vertical-align:middle;
+	width:110px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font-weight:bold;
+	white-space:nowrap;
+	font-size:0.8em;
+	font-family: 'Just Me Again Down Here', cursive;
+}
+#title {
+	-moz-transform:rotate(1.5deg);
+	-ms-transform:rotate(1.5deg);
+	-o-transform:rotate(1.5deg);
+	-webkit-transform:rotate(1.5deg);
+	transform:rotate(1.5deg);
+}
+#artist {
+	-moz-transform:rotate(-1deg);
+	-ms-transform:rotate(-1deg);
+	-o-transform:rotate(-1deg);
+	-webkit-transform:rotate(-1deg);
+	transform:rotate(-1deg);
+}
+#downloadBtn {
+	position:absolute;
+	width:36px;
+	height:0;
+	left:58px;
+	top:76px;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -1736px -227px;
+	box-shadow:0 5px 5px rgba(0,0,0,0.7);
+}
+#controls {
+	display:none;
+}
+#controls a, #downloadBtn {
+	display:inline-block;
+	text-indent:-9999em;
+	overflow:hidden;
+}
+#controls .button-l, #controls .button-r {
+	width:32px;
+	height:41px;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -1770px -270px;
+}
+#controls .button-l:active, #controls .button-l.active {background-position: -1736px -267px;}
+#controls .button-r:active, #controls .button-r.active {background-position: -1774px -227px;}
+#controls .button:hover {}
+
+#playBtn, #rwBtn, #ffBtn, #volUpBtn, #volDownBtn, #ejectBtn {position:absolute;}
+#playBtn {
+	bottom:33px;
+	left:45px;
+}
+#rwBtn {
+	bottom:33px;
+	left:73px;
+}
+#ffBtn {
+	bottom:33px;
+	left:100px;
+}
+#volDownBtn {
+	right:107px;
+	bottom:32px;
+}
+#volUpBtn {
+	right:79px;
+	bottom:32px;
+}
+#ejectBtn {
+	right:51px;
+	bottom:32px;
+}
+
+/*----------------
+BACKGROUND OBJECTS
+----------------*/
+#mic {
+	position:absolute;
+	width:131px;
+	height:371px;
+	top:50px;
+	right:80px;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -1890px -2px;
+}
+.bg-reel {
+	width:245px;
+	height:245px;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -1181px -2px;
+}
+#bgReel1 {
+	position:fixed;
+	bottom:-90px;
+	left:-90px;
+}
+#bgReel2 {
+	position:fixed;
+	bottom:-100px;
+	right:400px;
+	-moz-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	transform:rotate(45deg);
+}
+#pencil {
+	position:fixed;
+	bottom:25px;
+	right:40px;
+	width:236px;
+	height:13px;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -912px -34px;
+	-moz-transform:rotate(-6deg);
+	-ms-transform:rotate(-6deg);
+	-o-transform:rotate(-6deg);
+	-webkit-transform:rotate(-6deg);
+	transform:rotate(-6deg);
+	z-index:1;
+}
+#paper {
+	position:fixed;
+	width:300px;
+	height:294px;
+	bottom:-100px;
+	right:-10px;
+	padding:20px;
+	background-image:url(../images/reelmusic-sprite.png);
+	background-repeat: no-repeat;
+	background-position: -504px -2px;
+	font-family: 'Just Me Again Down Here', cursive;
+	font-size: 1.1em;
+	-moz-transform:rotate(-10deg);
+	-ms-transform:rotate(-10deg);
+	-o-transform:rotate(-10deg);
+	-webkit-transform:rotate(-10deg);
+	transform:rotate(-10deg);
+}
+#paper p {
+	margin-bottom:10px;
+	line-height:1.2em;
+}
+
+/*-------
+ANIMATION
+-------*/
+.stop {
+	-moz-animation-play-state: paused !important;
+	-ms-animation-play-state: paused !important;
+	-o-animation-play-state: paused !important;
+	-webkit-animation-play-state: paused !important;
+	animation-play-state: paused !important;
+}
+.normal {
+	-moz-animation-duration:2.5s !important;
+	-ms-animation-duration:2.5s !important;
+	-o-animation-duration:2.5s !important;
+	-webkit-animation-duration:2.5s !important;
+	animation-duration:2.5s !important;
+	
+}
+.fast {
+	-moz-animation-duration:0.5s !important;
+	-ms-animation-duration:0.5s !important;
+	-o-animation-duration:0.5s !important;
+	-webkit-animation-duration:0.5s !important;
+	animation-duration:0.5s !important;
+}
+.reverse {
+	-moz-animation:rotate-reverse 2.5s infinite linear;
+	-ms-animation:rotate-reverse 2.5s infinite linear;
+	-o-animation:rotate-reverse 2.5s infinite linear;
+	-webkit-animation:rotate-reverse 2.5s infinite linear;
+	animation:rotate-reverse 2.5s infinite linear;
+	
+}
+.forward {
+	-moz-animation:rotate 2.5s infinite linear;
+	-ms-animation:rotate 2.5s infinite linear;
+	-o-animation:rotate 2.5s infinite linear;
+	-webkit-animation:rotate 2.5s infinite linear;
+	animation:rotate 2.5s infinite linear;
+}
+.reverse, .forward {
+	-moz-animation-play-state: running;
+	-ms-animation-play-state: running;
+	-o-animation-play-state: running;
+	-webkit-animation-play-state: running;
+	animation-play-state: running;
+}
+@-webkit-keyframes rotate {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(359deg);}
+}
+@-ms-keyframes rotate {
+    from {-ms-transform: rotate(0deg);}
+    to {-ms-transform: rotate(359deg);}
+}
+@-moz-keyframes rotate {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(359deg);}
+}
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}
+
+@-webkit-keyframes rotate-reverse {
+    from {-webkit-transform: rotate(359deg);}
+    to {-webkit-transform: rotate(0deg);}
+}
+@-ms-keyframes rotate-reverse {
+    from {-ms-transform: rotate(359deg);}
+    to {-ms-transform: rotate(0deg);}
+}
+@-moz-keyframes rotate-reverse {
+    from {-moz-transform: rotate(359deg);}
+    to {-moz-transform: rotate(0deg);}
+}
+@keyframes rotate-reverse {
+    from {transform: rotate(359deg);}
+    to {transform: rotate(0deg);}
+}
+
+/* Responsive (For large screens */
+
+@media (min-height: 940px) and (min-width:1200px) {
+	.wrapper-outer { 
+		width: 1200px;
+		height: 820px;
+		margin: 40px auto 0;
+		border: 1px solid #333;
+		box-shadow: 0 0 5px rgba(0,0,0,0.5), inset 0 0 5px black;
+	}
+	#bgReel1, #bgReel2, #pencil, #paper { 
+		position: absolute;
+	}
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>ReelMusic</title>
+		<link href="css/js-demo.css" type="text/css" rel="stylesheet" />
+		<link href="css/style.css" type="text/css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
+		<script src="js/frameworks.min.js"></script>
+		<script src="js/classes.min.js"></script>
+		<script src="js/implementation.js"></script>
+	</head>
+	<body>
+		 <div class="link-back">
+     	<a href="http://www.johnslipper.com/reelmusic/" title="Back to original article on johnslipper.com">&laquo; Back to article "ReelMusic - JavaScript MP3 Player" on johnslipper.com</a>
+    </div>
+		<div class="wrapper-outer">
+			<div class="wrapper">
+				<h1 id="title"><span class="top">Reel</span><span class="bottom">Music</span></h1>
+				<!-- TAPES (INJECTED ON PAGE LOAD FROM ARRAY) -->
+				<ul id="tapes"></ul>
+				<!-- REEL MACHINE BODY -->
+				<div id="reel-body">
+					<!-- TAPE INFORMATION (INJECTED ON TAPE LOAD) -->
+					<ul id="info"></ul>
+					<!-- PLAYBACK CONTROLS -->
+					<ul id="controls">
+						<li><a id="playBtn" class="button-l" href="javascript:;">Play / Pause</a></li>
+						<li><a id="rwBtn" class="button-l" href="javascript:;">Rewind</a></li>
+						<li><a id="ffBtn" class="button-l" href="javascript:;">Fast Forward</a></li>
+						<li><a id="volDownBtn" class="button-r" href="javascript:;">Volume Down</a></li>
+						<li><a id="volUpBtn" class="button-r" href="javascript:;">Volume Up</a></li>
+						<li><a id="ejectBtn" class="button-r" href="javascript:;">Eject</a></li>
+					</ul>
+				</div>
+				<!-- LEFT REEL -->
+				<div id="leftReelOuter" class="reel">
+					<div class="shadow"></div>
+					<div id="leftTape" class="tape"></div>
+					<div id="leftReel"></div>
+				</div>
+				<!-- RIGHT REEL -->
+				<div id="rightReelOuter" class="reel">
+					<div class="shadow"></div>
+					<div id="rightTape" class="tape"></div>
+					<div id="rightReel"></div>
+				</div>
+				<div id="leftRunner" class="runner"></div>
+				<div id="rightRunner" class="runner"></div>
+				<div id="mic"></div>
+				<!-- TAPE STRIPS -->
+				<div id="leftTapeStrip" class="tape-strip"></div>
+				<div id="rightTapeStrip" class="tape-strip"></div>
+			</div>
+			<!-- BACKGROUND OBJECTS -->
+			<div id="bgReel1" class="bg-reel"></div>
+			<div id="bgReel2" class="bg-reel"></div>
+			<div id="pencil"></div>
+			<div id="paper">
+				<p>This is a CSS3 &amp; HTML5 Audio Tag Demo by <a href="http://www.johnslipper.com/" title="John Slipper">John Slipper</a> to demonstrate capabilities of native styling and the audio tag when used with <a href="http://buzz.jaysalvat.com/" title="Buzz HTML5 Audio Library" target="_blank">Buzz</a> and <a href="http://buzz.jaysalvat.com/" title="Mootools JS Framework" target="_blank">Mootools</a> JavaScript Classes.</p>
+				<ul>
+					<li>Click on a tape box to load it.</li>
+					<li>Use the front switches to control the playback.</li>
+					<li>Click on the red ribbon to download the track.</li>
+				</ul>
+			</div>
+			<div id="loading"></div>
+			<div id="message">
+				<h2>Sorry!</h2>
+				<p>Looks like your browser isn't currently supported. <br />This page is best viewed using one of the following browsers:</p>
+				<ul>
+					<li><a class="chrome" href="http://www.google.com/chrome" title="Get Chrome" target="_blank">Google Chrome</a></li>
+					<li><a class="firefox" href="http://www.mozilla.com/firefox" title="Get Firefox" target="_blank">Mozilla Firefox</a></li>
+					<li><a class="opera" href="http://www.opera.com" title="Get Opera" target="_blank">Opera</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
